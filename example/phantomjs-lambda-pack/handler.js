@@ -7,17 +7,10 @@
 // const shellSync = require('./shellSync');
 const fs = require('fs');
 
-const pack = require('./lambda-pack');
+const pack = require('phantomjs-lambda-pack');
 const exec = pack.exec;
 
-
-
 module.exports.handler = function(event, context, onComplete) {
-
-  pack.installPhantom();
-
-  console.log('Number got high');
-
 
   exec('-v', (error, stdout, stderr) => {
     if (error) {
@@ -25,15 +18,10 @@ module.exports.handler = function(event, context, onComplete) {
       return;
     }
 
-    console.log('Number got high 2');
+    console.log(`phantom version: ${stdout}`);
+    console.log(`Should have no error: ${stderr}`);
 
-    console.log(`phantom stdout: ${stdout}`);
-    console.log(`phantom stderr: ${stderr}`);
-
-    onComplete(error, {
-      shellResult: 'whhhattt',
-      //state: packModule.state
-    });
+    onComplete(error, 'fin!!');
   });
 
 };

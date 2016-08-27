@@ -1,8 +1,11 @@
+'use strict';
+
 // const shellSync = require('./shellSync');
 const execSync = require('child_process').execSync;
 const execFile = require('child_process').execFile;
 const BIN_PATH = '/tmp/phantom/node_modules/phantomjs-prebuilt/bin/';
 const PHANTOM_PATH = '/tmp/phantom';
+var isWin = /^win/.test(process.platform);
 
 const pack = exports = module.exports = {};
 
@@ -58,11 +61,27 @@ pack.installPhantom = () => {
     }
 };
 
-pack.path = BIN_PATH;
+pack.path = getPhantomPath();
 
 pack.exec = function(args, onComplete) {
-    
-    console.log('exec phantom: ', args)
 
-    return execFile('/tmp/phantom/node_modules/phantomjs-prebuilt/bin/phantomjs', ['-v'], onComplete);
+    console.log('exec phantom: ', args);
+
+    const phantomPath = getPhantomPath();
+    return execFile(phantomPath, ['-v'], onComplete);
+
 };
+
+// This is pretty lame because it requires phantomjs be in the path, but it keeps things light and simple for now
+function getPhantomPath() {
+
+    if(pack.isAWSHosted()) {
+        return '/tmp/phantom/node_modules/phantomjs-prebuilt/bin/phantomjs';
+    }
+
+    return 'phantomjs';
+
+}
+
+// Install By default
+pack.installPhantom();

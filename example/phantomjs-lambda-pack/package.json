@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-lambda-pack": "file:../.."
   }
 }
