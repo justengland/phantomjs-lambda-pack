@@ -1,0 +1,25 @@
+{
+  "name": "phantomjs-lambda-pack",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: phantomjs-example",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 300,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

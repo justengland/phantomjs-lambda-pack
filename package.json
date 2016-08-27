@@ -1,0 +1,21 @@
+{
+  "name": "phantomjs-lambda-pack",
+  "version": "0.0.1",
+  "description": "Headless WebKit with JS API, all wrapped for AWS Lambda",
+  "main": "index.js",
+  "keywords": [
+    "phantomjs",
+    "headless",
+    "webkit",
+    "AWS",
+    "lambda"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin England",
+  "license": "MIT",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.7"
+  }
+}
