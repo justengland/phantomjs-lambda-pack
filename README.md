@@ -25,6 +25,11 @@ exports.handler = (event, context, callback) => {
     });
 };
 ```
+## To Do
+1. Support phantomjs versioning, currently it just uses the latest of [phatomjs-prebuilt](https://www.npmjs.com/package/phantomjs-prebuilt)
+1. Better support in the local environments, currently phantomjs needs to be installed in the path
+1. Check if the lambda memory requirements are met.
+
 ## Notes
 Use more memory at least 1024
 Make sure to zip up the entire directory and ship it
