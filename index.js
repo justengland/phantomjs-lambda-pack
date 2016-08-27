@@ -3,9 +3,8 @@
 // const shellSync = require('./shellSync');
 const execSync = require('child_process').execSync;
 const execFile = require('child_process').execFile;
-const BIN_PATH = '/tmp/phantom/node_modules/phantomjs-prebuilt/bin/';
 const PHANTOM_PATH = '/tmp/phantom';
-var isWin = /^win/.test(process.platform);
+const phantomjsPrebuiltVersion = require('./package.json').phantomjsPrebuiltVersion;
 
 const pack = exports = module.exports = {};
 
@@ -45,7 +44,7 @@ pack.installPhantom = () => {
         pack.packPack(`mkdir2Out: ${mkdir2Out}`);
 
         try {
-            const npmInstall = shellSync('npm install phantomjs-prebuilt', PHANTOM_PATH);
+            const npmInstall = shellSync(`npm install phantomjs-prebuilt@${phantomjsPrebuiltVersion}`, PHANTOM_PATH);
             pack.packPack(`npmInstall: [[ ${npmInstall} ]] `);
         }
         catch(e) {

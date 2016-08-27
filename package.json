@@ -1,6 +1,7 @@
 {
   "name": "phantomjs-lambda-pack",
   "version": "0.0.3",
+  "phantomjsPrebuiltVersion": "2.1.12",
   "description": "Headless WebKit with JS API, all wrapped for AWS Lambda",
   "main": "index.js",
   "keywords": [

@@ -39,8 +39,11 @@ Make sure to zip up the entire directory and ship it
 
 ### Thanks
 [PhantomJS](http://phantomjs.org/)
+
 [AWS Lambda](https://aws.amazon.com/lambda/)
+
 [PhantomJS-Prebuilt](https://github.com/Medium/phantomjs)
+
 [Serverless](http://serverless.com/)
 
 
