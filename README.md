@@ -30,6 +30,6 @@ Use more memory at least 1024
 Make sure to zip up the entire directory and ship it
 
 # Example
-[Basic Version Check] (https://github.com/justengland/phantomjs-lambda-pack/tree/master/example) using [Serverless](http://serverless.com/)
+[Basic Version Check](https://github.com/justengland/phantomjs-lambda-pack/tree/master/example) using [Serverless](http://serverless.com/)
 
 
