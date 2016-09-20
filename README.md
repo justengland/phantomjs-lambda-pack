@@ -31,7 +31,7 @@ exports.handler = (event, context, callback) => {
 1. Check if the lambda memory requirements are met.
 
 ### Notes
-Use more memory at least 1024
+Use more memory at least 1024 and a timeout greater than 180 seconds
 Make sure to zip up the entire directory and ship it
 
 ### Example
