@@ -1,6 +1,7 @@
 {
   "name": "phantomjs-lambda-pack",
   "version": "1.0.2",
+  "phantomjsPrebuiltVersion": "1.9.19",
   "description": "",
   "main": "handler.js",
   "scripts": {
