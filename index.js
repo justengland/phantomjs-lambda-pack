@@ -5,6 +5,7 @@ const execSync = require('child_process').execSync;
 const execFile = require('child_process').execFile;
 const PHANTOM_PATH = '/tmp/phantom';
 const phantomjsPrebuiltVersion = require('./package.json').phantomjsPrebuiltVersion;
+const util = require('util');
 
 const pack = exports = module.exports = {};
 
@@ -65,9 +66,13 @@ pack.path = getPhantomPath();
 pack.exec = function(args, onComplete) {
 
     console.log('exec phantom: ', args);
+    
+    if (!util.isArray(args)) {
+        args = [ args ];
+    }
 
     const phantomPath = getPhantomPath();
-    return execFile(phantomPath, ['-v'], onComplete);
+    return execFile(phantomPath, args, onComplete);
 
 };
 
